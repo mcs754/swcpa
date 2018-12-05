@@ -28,7 +28,7 @@ if ($_POST){
             </div>
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-primary btn-block">Cadastrar</button>
+            <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
         </div>
     </div>
 </form>

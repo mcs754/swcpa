@@ -10,7 +10,6 @@ namespace App\DAO;
 
 
 class AlunoDAO extends Conexao {
-
     public function inserir ($aluno){
         $sql = "insert into aluno (id_arquivo_morto, num_aluno, cpf_aluno, nome_aluno, nome_mae_aluno, observacao_aluno)values(:id_arquivo_morto, :num_aluno, :cpf_aluno, :nome_aluno, :nome_mae_aluno, :observacao_aluno)";
         try{
@@ -24,6 +23,32 @@ class AlunoDAO extends Conexao {
             $i->execute();
             return true;
         }catch (\PDOException $e){
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function pesquisar($aluno){
+        $sql = "select * from aluno where cpf_aluno = :cpf_aluno or nome_aluno like :nome_aluno or nome_mae_aluno like :nome_mae_aluno";
+        try{
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":cpf_aluno", $aluno->getCpfAluno());
+            $a->bindValue(":nome_aluno", "%".$aluno->getNomeAluno()."%");
+            $a->bindValue(":nome_mae_aluno", "%".$aluno->getNomeMaeAluno()."%");
+            $a->execute();
+            return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Aluno");
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function pesquisarUm($aluno){
+        $sql = "select * from aluno where id_aluno = :id_aluno";
+        try{
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_aluno", $aluno->getIdAluno());
+            $a->execute();
+            return $a->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e){
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
     }

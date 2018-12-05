@@ -13,7 +13,7 @@
 <?php
 include '../vendor/autoload.php';
 $uDAO = new \App\DAO\UsuarioDAO();
-$uDAO->verificar()
+$uDAO->verificar();
 ?>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container"><a href="index.php"><img src="/Imagens/bg-swcpa.png"></a>
@@ -21,11 +21,10 @@ $uDAO->verificar()
             <li class="nav-item mr-sm-5"><a href="cadastrar-pasta.php" class="nav-link">Cadastrar arquivo</a></li>
             <li class="nav-item mr-sm-5"><a href="cadastrar-aluno.php" class="nav-link">Cadastrar estudante</a></li>
         </ul>
-        <form class="form-inline">
-            <input class="form-control mr-sm-1" type="search" placeholder="Pesquisar aluno" aria-label="Pesquisar" autofocus>
-            <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+        <form class="form-inline" action="pesquisar-aluno.php" method="get">
+            <input name="cpf_aluno nome_aluno nome_mae_aluno" class="form-control mr-sm-1" type="search" placeholder="Pesquisar aluno" autofocus>
+            <button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
         </form>
         <a class="navbar-nav nav-item" href="logoff.php">Sair</a>
     </div>
 </nav>
-

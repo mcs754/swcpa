@@ -28,14 +28,18 @@ if ($_POST){
         </div>
         <div class="row">
 
+
+
             <div class="form-group col-md-4">
                 <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
                 <select id="nome_arquivo_morto" class="form-control chosen">
-                    <option selected>Selecione a pasta</option>
+                    <option disabled selected>Selecione a pasta</option>
                     <option>A1</option>
-                    <option>A2</option>
                 </select>
             </div>
+
+
+
             <!--
             <div class="col-md-4">
                 <div class="form-group">
@@ -44,6 +48,10 @@ if ($_POST){
                 </div>
             </div>
             -->
+
+
+
+
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="num_aluno"><span class="text-danger">*</span> Número da pasta do estudante</label>
@@ -82,7 +90,7 @@ if ($_POST){
             </div>
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-primary btn-block">Cadastrar</button>
+            <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
         </div>
     </div>
 </form>

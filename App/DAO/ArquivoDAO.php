@@ -21,4 +21,16 @@ class ArquivoDAO extends Conexao {
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
     }
+
+    public function pesquisarTodos($arquivo_morto = null){
+        $sql = "select * from arquivo_morto where nome_arquivo_morto like :nome_arquivo_morto";
+        try{
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":nome_arquivo_morto", "%".$arquivo_morto->getNomeArquivoMorto()."%");
+            $a->execute();
+            return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Arquivo");
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
 }
