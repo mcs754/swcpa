@@ -33,25 +33,28 @@ if (count($alunos) > 0) {
 <div class="container">
     <table class='table-sm table-bordered table-condensed table-striped table-hover'>
         <tr class='text-center'>
-            <th>Arquivo</th>
-            <th>Pasta</th>
-            <th>CPF</th>
-            <th class="text-left">Nome</th>
-            <th class="text-left">Nome da mãe</th>
-            <th class="text-left">Observação</th>
-            <th></th>
-            <th></th>
+            <th><img src="/Imagens/archive_3994357.png" title="Arquivo"></th>
+            <th><img src="/Imagens/directory_3994364.png" title="Pasta"></th>
+            <th width="10">CPF</th>
+            <th width="30">Nascimento</th>
+            <th width="300" class="text-left">Nome</th>
+            <th width="300" class="text-left">Mãe</th>
+            <th width="300" class="text-left">Observação</th>
+            <th width="5"></th>
+            <th width="5"></th>
         </tr>
         <?php foreach ($alunos as $aluno){
             echo "<tr class='text-center'>";
-            echo "<th>A</th>";
+            echo "<th>{$aluno->getIdArquivoMorto()}</th>";
             echo "<th>{$aluno->getNumAluno()}</th>";
             echo "<td>{$aluno->getCpfAluno()}</td>";
+            echo "<td>".\App\Helper\Data::get($aluno->getDataNascimentoAluno())."</td>";
             echo "<td class='text-left'>{$aluno->getNomeAluno()}</td>";
             echo "<td class='text-left'>{$aluno->getNomeMaeAluno()}</td>";
             echo "<td class='text-left'>{$aluno->getObservacaoAluno()}</td>";
-            echo "<td><a class='btn-sm btn-warning' href=#'>Alterar</a></td>";
-            echo "<td><a class='btn-sm btn-danger' href=#'><span class='glyphicon glyphicon-trash'></span>Excluir</a></td>";
+            echo "<td><a href='#'><img src='/Imagens/edit_3994420.png' title='Editar'></a></td>";
+            echo "<td><a href='#'><img src='/Imagens/delete_3994410.png' title='Excluir'></a></td>";
+
             /*
             echo "<td><a class='btn btn-danger' href='aluno-excluir.php?id={$aluno->getId()}'> Excluir</a></td>";
             echo "<td><a class='btn btn-warning' href='aluno-alterar.php?id={$aluno->getId()}'>Alterar</a></td>";

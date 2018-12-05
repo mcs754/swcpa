@@ -14,6 +14,7 @@ class Aluno {
     private $id_arquivo_morto;
     private $num_aluno;
     private $cpf_aluno;
+    private $data_nascimento_aluno;
     private $nome_aluno;
     private $nome_mae_aluno;
     private $observacao_aluno;
@@ -85,6 +86,22 @@ class Aluno {
     /**
      * @return mixed
      */
+    public function getDataNascimentoAluno()
+    {
+        return $this->data_nascimento_aluno;
+    }
+
+    /**
+     * @param mixed $data_nascimento_aluno
+     */
+    public function setDataNascimentoAluno($data_nascimento_aluno)
+    {
+        $this->data_nascimento_aluno = $data_nascimento_aluno;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getNomeAluno()
     {
         return $this->nome_aluno;
@@ -129,4 +146,5 @@ class Aluno {
     {
         $this->observacao_aluno = $observacao_aluno;
     }
+
 }

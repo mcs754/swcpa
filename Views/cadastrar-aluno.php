@@ -7,13 +7,15 @@ include 'cabecalho.php';
 </div>
 <form action="cadastrar-aluno.php" method="post">
     <div class="container">
-
 <?php
 if ($_POST){
     $a = new \App\Model\Aluno();
+
     $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
+
     $a->setNumAluno($_POST['num_aluno']);
     $a->setCpfAluno($_POST['cpf_aluno']);
+    !empty($_POST['data_nascimento_aluno']) ? $a->setDataNascimentoAluno(\App\Helper\Data::set($_POST['data_nascimento_aluno'])) : $a->setDataNascimentoAluno(null);
     $a->setNomeAluno($_POST['nome_aluno']);
     $a->setNomeMaeAluno($_POST['nome_mae_aluno']);
     $a->setObservacaoAluno($_POST['observacao_aluno']);
@@ -21,47 +23,51 @@ if ($_POST){
     if ($aDAO->inserir($a))
         echo "<div class='form-group alert alert-success'>Nova pasta de estudante cadastrado com sucesso!</div>";
 }
+$arq = new \App\Model\Arquivo();
+$aDAO = new \App\DAO\ArquivoDAO();
+$arquivos = $aDAO->pesquisarArquivos($arq);
 ?>
-
         <div class="form-group alert alert-secondary" role="alert">
             <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
         </div>
         <div class="row">
-
-
-
-            <div class="form-group col-md-4">
-                <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
-                <select id="nome_arquivo_morto" class="form-control chosen">
+            <div class="form-group col-md-3">
+                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
+                <select id="id_arquivo_morto" class="form-control ">
                     <option disabled selected>Selecione a pasta</option>
-                    <option>A1</option>
+                        <?php
+                        if (count($arq) > 0) {
+                            foreach ($arquivos as $arquivo){
+                                echo "<option>{$arquivo->getNomeArquivoMorto()}</option>";
+                            }
+                        }
+                        ?>
                 </select>
             </div>
-
-
-
             <!--
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
-                    <label for="id_arquivo_morto"><span class="text-danger">*</span> Número da pasta do arquivo morto</label>
+                    <label for="id_arquivo_morto"><span class="text-danger">*</span> Número do arquivo</label>
                     <input type="number" id="id_arquivo_morto" name="id_arquivo_morto" class="form-control" required>
                 </div>
             </div>
             -->
-
-
-
-
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
-                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta do estudante</label>
+                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta</label>
                     <input type="number" id="num_aluno" name="num_aluno" class="form-control" required>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="cpf_aluno">CPF do estudante</label>
                     <input type="number" id="cpf_aluno" name="cpf_aluno" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="data_nascimento_aluno"><span class="text-danger">*</span> Data de nascimento</label>
+                    <input type="date" id="data_nascimento_aluno" name="data_nascimento_aluno" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -89,8 +95,12 @@ if ($_POST){
                 </div>
             </div>
         </div>
-        <div>
-            <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
+                </div>
+            </div>
         </div>
     </div>
 </form>

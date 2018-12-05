@@ -1,4 +1,4 @@
-create database db_swcpa;
+create database db_swcpa default character set utf8 collate utf8_general_ci;
 use db_swcpa;
 
 create table arquivo_morto(
@@ -31,9 +31,7 @@ create table usuarios(
 
 insert into usuarios (cpf, senha) values('96319631287', '487755c88d8465843665683f5f61b017');
 
-
-
---INNER JOINS
+-- INNER JOINS
 select nome_arquivo_morto, num_aluno, cpf_aluno, nome_aluno, nome_mae_aluno, observacao_aluno
 from arquivo_morto inner join aluno
 on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto

@@ -11,12 +11,13 @@ namespace App\DAO;
 
 class AlunoDAO extends Conexao {
     public function inserir ($aluno){
-        $sql = "insert into aluno (id_arquivo_morto, num_aluno, cpf_aluno, nome_aluno, nome_mae_aluno, observacao_aluno)values(:id_arquivo_morto, :num_aluno, :cpf_aluno, :nome_aluno, :nome_mae_aluno, :observacao_aluno)";
+        $sql = "insert into aluno (id_arquivo_morto, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno)values(:id_arquivo_morto, :num_aluno, :cpf_aluno, :data_nascimento_aluno, :nome_aluno, :nome_mae_aluno, :observacao_aluno)";
         try{
             $i = $this->conexao->prepare($sql);
             $i->bindValue(":id_arquivo_morto", $aluno->getIdArquivoMorto());
             $i->bindValue(":num_aluno", $aluno->getNumAluno());
             $i->bindValue(":cpf_aluno", $aluno->getCpfAluno());
+            $i->bindValue(":data_nascimento_aluno", $aluno->getDataNascimentoAluno());
             $i->bindValue(":nome_aluno", $aluno->getNomeAluno());
             $i->bindValue(":nome_mae_aluno", $aluno->getNomeMaeAluno());
             $i->bindValue(":observacao_aluno", $aluno->getObservacaoAluno());
