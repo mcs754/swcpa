@@ -1,5 +1,5 @@
 <?php
-$titulo = "Cadastrar aluno";
+$titulo = "Cadastrar estudante";
 include 'cabecalho.php';
 ?>
 <div class="container cabecalho">
@@ -30,18 +30,16 @@ if ($_POST){
         </div>
         <div class="row">
             <div class="form-group col-md-3">
-                <label><span class="text-danger">*</span> Nome identificador da pasta</label>
-                <select id="id_arquivo_morto" class="form-control">
+                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
+                <select name="id_arquivo_morto" class="form-control">
                     <option disabled selected>Selecione a pasta</option>
                         <?php
                         $arq = new \App\Model\Arquivo();
                         $aDAO = new \App\DAO\ArquivoDAO();
                         $arquivos = $aDAO->pesquisarArquivos($arq);
-                        foreach ($arquivos as $arquivo){
-                            $id_arquivo_morto = $arquivo->getIdArquivoMorto();
-                            echo "<option value='$id_arquivo_morto'>{$arquivo->getNomeArquivoMorto()}</option>";
+                        foreach ($arquivos as $arquivo) {
+                            echo "<option value='{$arquivo->getIdArquivoMorto()}'>{$arquivo->getNomeArquivoMorto()}</option>";
                         }
-                        $_POST['id_arquivo_morto'] = $id_arquivo_morto;
                         ?>
                 </select>
             </div>

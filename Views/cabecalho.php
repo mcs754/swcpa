@@ -16,7 +16,7 @@ include '../vendor/autoload.php';
 $uDAO = new \App\DAO\UsuarioDAO();
 $uDAO->verificar();
 ?>
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
     <div class="container">
         <a href="index.php"><img src="/Imagens/bg-swcpa.png"></a>
         <ul class="navbar-nav">
@@ -28,10 +28,10 @@ $uDAO->verificar();
             </li>
         </ul>
         <form class="form-inline" action="pesquisar-aluno.php" method="get">
-            <input name="cpf_aluno nome_aluno nome_mae_aluno" class="form-control mr-sm-1" type="search" placeholder="Pesquisar estudante" autofocus/>
+            <input name="parametros" class="form-control mr-sm-2" type="search" placeholder="Pesquisar estudante" autofocus/>
             <!--<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>-->
-            <input alt="submit" title="Pesquisar" type=image src="/Imagens/search_3994401.png" width="38" height="38"/>
+            <input alt="submit" title="Pesquisar" type=image src="/Imagens/search_3994401.png" width="35" height="35"/>
         </form>
-        <a class="navbar-nav nav-item " href="logoff.php">Sair</a>
+        <a class="navbar-nav nav-item " title='Sair' href="logoff.php"><img src='/Imagens/logout_3994458.png' width="32" height="32"></a>
     </div>
 </nav>

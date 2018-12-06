@@ -1,5 +1,5 @@
 <?php
-$titulo = "Cadastrar pasta";
+$titulo = "Cadastrar arquivo";
 include 'cabecalho.php';
 ?>
 <div class="container cabecalho">

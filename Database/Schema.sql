@@ -38,3 +38,5 @@ select nome_arquivo_morto, num_aluno, cpf_aluno, nome_aluno, nome_mae_aluno, obs
 from arquivo_morto inner join aluno
 on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto
 where nome_arquivo_morto = 'A2';
+
+select * from aluno inner join arquivo_morto on aluno.id_arquivo_morto = arquivo_morto.id_arquivo_morto where cpf_aluno = "96319631287" or nome_aluno like "%marcos%" or nome_mae_aluno like "%maria%";
