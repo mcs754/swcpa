@@ -10,9 +10,7 @@ include 'cabecalho.php';
 <?php
 if ($_POST){
     $a = new \App\Model\Aluno();
-
     $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
-
     $a->setNumAluno($_POST['num_aluno']);
     $a->setCpfAluno($_POST['cpf_aluno']);
     !empty($_POST['data_nascimento_aluno']) ? $a->setDataNascimentoAluno(\App\Helper\Data::set($_POST['data_nascimento_aluno'])) : $a->setDataNascimentoAluno(null);
@@ -20,27 +18,30 @@ if ($_POST){
     $a->setNomeMaeAluno($_POST['nome_mae_aluno']);
     $a->setObservacaoAluno($_POST['observacao_aluno']);
     $aDAO = new \App\DAO\AlunoDAO();
-    if ($aDAO->inserir($a))
-        echo "<div class='form-group alert alert-success'>Nova pasta de estudante cadastrado com sucesso!</div>";
+    if ($aDAO->inserir($a)){
+        echo "<div class='form-group alert alert-success'>Nova pasta de estudante cadastrada com sucesso!</div>";
+    }else{
+        echo "<div class='form-group alert alert-danger'>Nova pasta de estudante não foi cadastrada!</div>";
+    }
 }
-$arq = new \App\Model\Arquivo();
-$aDAO = new \App\DAO\ArquivoDAO();
-$arquivos = $aDAO->pesquisarArquivos($arq);
 ?>
         <div class="form-group alert alert-secondary" role="alert">
             <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
         </div>
         <div class="row">
             <div class="form-group col-md-3">
-                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
-                <select id="id_arquivo_morto" class="form-control ">
+                <label><span class="text-danger">*</span> Nome identificador da pasta</label>
+                <select id="id_arquivo_morto" class="form-control">
                     <option disabled selected>Selecione a pasta</option>
                         <?php
-                        if (count($arq) > 0) {
-                            foreach ($arquivos as $arquivo){
-                                echo "<option>{$arquivo->getNomeArquivoMorto()}</option>";
-                            }
+                        $arq = new \App\Model\Arquivo();
+                        $aDAO = new \App\DAO\ArquivoDAO();
+                        $arquivos = $aDAO->pesquisarArquivos($arq);
+                        foreach ($arquivos as $arquivo){
+                            $id_arquivo_morto = $arquivo->getIdArquivoMorto();
+                            echo "<option value='$id_arquivo_morto'>{$arquivo->getNomeArquivoMorto()}</option>";
                         }
+                        $_POST['id_arquivo_morto'] = $id_arquivo_morto;
                         ?>
                 </select>
             </div>

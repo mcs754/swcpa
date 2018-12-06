@@ -6,10 +6,6 @@ include 'cabecalho.php';
     <h1>Pesquisar estudante</h1>
 </div>
 <?php
-if (isset($_GET['msg']) && $_GET['msg'] == 1)
-    echo "<div class='alert alert-success'>Estudante excluído com sucesso!</div>";
-if (isset($_GET['msg']) && $_GET['msg'] == 2)
-    echo "<div class='alert alert-success'>Estudante alterado com sucesso!</div>";
 $a1 = new \App\Model\Aluno();
 $a2 = new \App\Model\Aluno();
 $a3 = new \App\Model\Aluno();
@@ -31,6 +27,12 @@ else{
 if (count($alunos) > 0) {
 ?>
 <div class="container">
+    <?php
+    if (isset($_GET['msg']) && $_GET['msg'] == 1)
+        echo "<div class='form-group alert alert-success'>Estudante excluído com sucesso!</div>";
+    if (isset($_GET['msg']) && $_GET['msg'] == 2)
+        echo "<div class='form-group alert alert-success'>Estudante alterado com sucesso!</div>";
+    ?>
     <table class='table-sm table-bordered table-condensed table-striped table-hover'>
         <tr class='text-center'>
             <th><img src="/Imagens/archive_3994357.png" title="Arquivo"></th>
@@ -45,15 +47,15 @@ if (count($alunos) > 0) {
         </tr>
         <?php foreach ($alunos as $aluno){
             echo "<tr class='text-center'>";
-            echo "<th>{$aluno->getIdArquivoMorto()}</th>";
-            echo "<th>{$aluno->getNumAluno()}</th>";
+            echo "<td class='font-weight-bold'>{$aluno->getIdArquivoMorto()}</td>";
+            echo "<td class='font-weight-bold'>{$aluno->getNumAluno()}</td>";
             echo "<td>{$aluno->getCpfAluno()}</td>";
             echo "<td>".\App\Helper\Data::get($aluno->getDataNascimentoAluno())."</td>";
-            echo "<td class='text-left'>{$aluno->getNomeAluno()}</td>";
-            echo "<td class='text-left'>{$aluno->getNomeMaeAluno()}</td>";
-            echo "<td class='text-left'>{$aluno->getObservacaoAluno()}</td>";
+            echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
+            echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
+            echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
             echo "<td><a href='#'><img src='/Imagens/edit_3994420.png' title='Editar'></a></td>";
-            echo "<td><a href='#'><img src='/Imagens/delete_3994410.png' title='Excluir'></a></td>";
+            echo "<td><a href='aluno-excluir.php'><img src='/Imagens/delete_3994410.png' title='Excluir'></a></td>";
 
             /*
             echo "<td><a class='btn btn-danger' href='aluno-excluir.php?id={$aluno->getId()}'> Excluir</a></td>";
@@ -65,6 +67,6 @@ if (count($alunos) > 0) {
 </div>
     <?php
 } else {
-    echo "<div class='alert alert-danger'>Não existem estudantes com a pesquisa informada!</div>";
+    echo "<div class='container alert alert-danger'>Não existem estudantes com a pesquisa informada!</div>";
 }
 include 'rodape.php';?>

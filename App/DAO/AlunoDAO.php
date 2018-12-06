@@ -24,7 +24,7 @@ class AlunoDAO extends Conexao {
             $i->execute();
             return true;
         }catch (\PDOException $e){
-            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+            $e->getMessage();
         }
     }
 
@@ -49,6 +49,18 @@ class AlunoDAO extends Conexao {
             $a->bindValue(":id_aluno", $aluno->getIdAluno());
             $a->execute();
             return $a->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function excluir($aluno){
+        $sql = "delete from aluno where id_aluno = :id_aluno";
+        try{
+            $i = $this->conexao->prepare($sql);
+            $i->bindValue(":id_aluno", $aluno->getIdAluno());
+            $i->execute();
+            return true;
         } catch (\PDOException $e){
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
