@@ -28,7 +28,7 @@ $uDAO->verificar();
             </li>
         </ul>
         <form class="form-inline" action="pesquisar-aluno.php" method="get">
-            <input name="parametros" class="form-control mr-sm-2" type="search" placeholder="Pesquisar estudante" autofocus/>
+            <input id="parametros" class="form-control mr-sm-2" type="search" placeholder="Pesquisar estudante" autofocus/>
             <!--<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>-->
             <input alt="submit" title="Pesquisar" type=image src="/Imagens/search_3994401.png" width="35" height="35"/>
         </form>
