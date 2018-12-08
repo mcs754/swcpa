@@ -26,6 +26,9 @@ $uDAO->verificar();
             <li class="nav-item mr-sm-5">
                 <a href="cadastrar-aluno.php" class="nav-link">Cadastrar estudante</a>
             </li>
+            <li class="nav-item mr-sm-5">
+                <a href="saiba-mais.php" class="nav-link">Saiba mais</a>
+            </li>
         </ul>
         <form class="form-inline" action="pesquisar-aluno.php" method="get">
             <input id="parametro" name="parametro" class="form-control mr-sm-2" type="text" placeholder="Pesquisar estudante" autofocus/>
@@ -35,3 +38,15 @@ $uDAO->verificar();
         <a class="navbar-nav nav-item " title='Sair' href="logoff.php"><img src='/Imagens/logout_3994458.png' width="32" height="32"></a>
     </div>
 </nav>
+<div class="container" style="color: #ced4da; padding: 0px; padding-right: 15px;">
+    <small class="text-right">
+        <?php
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Manaus');
+        echo "<p class='font-italic'>";
+        echo "Data de acesso: ";
+        echo strftime('%d/%m/%Y', strtotime('now'));
+        echo "</p>";
+        ?>
+    </small>
+</div>

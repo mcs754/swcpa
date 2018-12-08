@@ -37,7 +37,7 @@ include 'cabecalho.php';
             echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
             echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
             echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-            echo "<td><a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Editar'></a></td>";
+            echo "<td><a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
             echo "<td><a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
             echo "</tr>";
         }
@@ -49,3 +49,4 @@ include 'cabecalho.php';
     echo "<div class='container alert alert-danger'>Não existem estudantes com a pesquisa informada!</div>";
 }
 include 'rodape.php'; ?>
+

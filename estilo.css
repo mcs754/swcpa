@@ -1,43 +1,50 @@
-a:link{
-    text-decoration:none;
+a:link {
+    text-decoration: none;
 }
 
-.info{
+.figure{
+    margin-right: 40px;
+}
+
+.recuo {
+    text-indent: 4em;
+    text-align: justify;
+}
+
+.info {
     margin-top: -7px;
     padding: 10px;
 }
 
-.img-login{
+.img-login {
     padding-top: 50px;
 }
 
-.cabecalho{
-    padding: 25px;
+.cabecalho {
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    margin-top: -15pt;
 }
 
-.cabecalho > h1{
+.cabecalho > h1 {
     font-size: 16pt;
 }
 
-.form{
-    border: #000000 solid 1px;
-}
-
-.rodape{
+.rodape {
     text-align: right;
     padding-top: 15px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 0;
+    padding-bottom: 15px;
+    margin: 0 auto;
 }
 
-.form-signin{
+.form-signin {
     max-width: 390px;
     margin: 0 auto;
 }
 
 .form-signin .form-signin-heading,
-.form-signin .form-control{
+.form-signin .form-control {
     position: relative;
     height: auto;
     -webkit-box-sizing: border-box;
@@ -47,18 +54,18 @@ a:link{
     font-size: 12pt;
 }
 
-.form-signin .form-control:focus{
+.form-signin .form-control:focus {
     z-index: 2;
 }
 
-.form-signin input[type="number"]{
+.form-signin input[type="number"] {
     margin-top: -6px;
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.form-signin input[type="password"]{
+.form-signin input[type="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
