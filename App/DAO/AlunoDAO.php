@@ -29,7 +29,7 @@ class AlunoDAO extends Conexao {
     }
 
     public function pesquisar($aluno){
-        $sql = "select nome_arquivo_morto, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where cpf_aluno = :cpf_aluno or nome_aluno like :nome_aluno or nome_mae_aluno like :nome_mae_aluno order by nome_arquivo_morto, num_aluno";
+        $sql = "select nome_arquivo_morto, id_aluno, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where cpf_aluno = :cpf_aluno or nome_aluno like :nome_aluno or nome_mae_aluno like :nome_mae_aluno order by nome_arquivo_morto, num_aluno";
         try{
             $a = $this->conexao->prepare($sql);
             $a->bindValue(":cpf_aluno", $aluno->getCpfAluno());
@@ -57,9 +57,9 @@ class AlunoDAO extends Conexao {
     public function excluir($aluno){
         $sql = "delete from aluno where id_aluno = :id_aluno";
         try{
-            $i = $this->conexao->prepare($sql);
-            $i->bindValue(":id_aluno", $aluno->getIdAluno());
-            $i->execute();
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_aluno", $aluno->getIdAluno());
+            $a->execute();
             return true;
         } catch (\PDOException $e){
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
