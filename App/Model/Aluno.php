@@ -10,6 +10,7 @@ namespace App\Model;
 
 
 class Aluno {
+    private $nome_arquivo_morto;
     private $id_aluno;
     private $id_arquivo_morto;
     private $num_aluno;
@@ -18,6 +19,22 @@ class Aluno {
     private $nome_aluno;
     private $nome_mae_aluno;
     private $observacao_aluno;
+
+    /**
+     * @return mixed
+     */
+    public function getNomeArquivoMorto()
+    {
+        return $this->nome_arquivo_morto;
+    }
+
+    /**
+     * @param mixed $nome_arquivo_morto
+     */
+    public function setNomeArquivoMorto($nome_arquivo_morto)
+    {
+        $this->nome_arquivo_morto = $nome_arquivo_morto;
+    }
 
     /**
      * @return mixed

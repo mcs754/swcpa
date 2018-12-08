@@ -29,7 +29,7 @@ class AlunoDAO extends Conexao {
     }
 
     public function pesquisar($aluno){
-        $sql = "select * from aluno where cpf_aluno = :cpf_aluno or nome_aluno like :nome_aluno or nome_mae_aluno like :nome_mae_aluno";
+        $sql = "select nome_arquivo_morto, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where cpf_aluno = :cpf_aluno or nome_aluno like :nome_aluno or nome_mae_aluno like :nome_mae_aluno order by nome_arquivo_morto, num_aluno";
         try{
             $a = $this->conexao->prepare($sql);
             $a->bindValue(":cpf_aluno", $aluno->getCpfAluno());

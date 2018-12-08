@@ -18,7 +18,7 @@ $uDAO->verificar();
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
     <div class="container">
-        <a href="index.php"><img src="/Imagens/bg-swcpa.png"></a>
+        <a title="Home" href="index.php"><img src="/Imagens/bg-swcpa.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item mr-sm-5">
                 <a href="cadastrar-pasta.php" class="nav-link">Cadastrar arquivo</a>
@@ -28,7 +28,7 @@ $uDAO->verificar();
             </li>
         </ul>
         <form class="form-inline" action="pesquisar-aluno.php" method="get">
-            <input id="parametros" class="form-control mr-sm-2" type="search" placeholder="Pesquisar estudante" autofocus/>
+            <input id="parametro" name="parametro" class="form-control mr-sm-2" type="text" placeholder="Pesquisar estudante" autofocus/>
             <!--<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>-->
             <input alt="submit" title="Pesquisar" type=image src="/Imagens/search_3994401.png" width="35" height="35"/>
         </form>

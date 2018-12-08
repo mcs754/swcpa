@@ -26,13 +26,58 @@
     <expand />
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-618594498">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="7" />
+          <entry key="sql" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="7" />
+          <entry key="SQL" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="125" />
+          <entry key="sql" value="51" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="125" />
+          <entry key="SQL" value="51" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Views/cadastrar-aluno.php">
+        <entry file="file://$PROJECT_DIR$/Views/cabecalho.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="629">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/pesquisar-aluno.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -80,7 +125,6 @@
         <option value="$PROJECT_DIR$/App/Model/Arquivo.php" />
         <option value="$PROJECT_DIR$/Views/index.php" />
         <option value="$PROJECT_DIR$/App/DAO/UsuarioDAO.php" />
-        <option value="$PROJECT_DIR$/App/Model/Aluno.php" />
         <option value="$PROJECT_DIR$/App/Helper/Data.php" />
         <option value="$PROJECT_DIR$/Views/OrdenarPastas.js" />
         <option value="$PROJECT_DIR$/Views/login.php" />
@@ -90,14 +134,22 @@
         <option value="$PROJECT_DIR$/Views/cadastrar-pasta.php" />
         <option value="$PROJECT_DIR$/App/DAO/ArquivoDAO.php" />
         <option value="$PROJECT_DIR$/Database/Schema.sql" />
+        <option value="$PROJECT_DIR$/Views/cadastrar-aluno.php" />
+        <option value="$PROJECT_DIR$/Views/aluno-excluir.php" />
         <option value="$PROJECT_DIR$/App/DAO/Conexao.php" />
         <option value="$PROJECT_DIR$/Views/cabecalho.php" />
-        <option value="$PROJECT_DIR$/App/DAO/AlunoDAO.php" />
-        <option value="$PROJECT_DIR$/Views/cadastrar-aluno.php" />
+        <option value="$PROJECT_DIR$/App/Model/Aluno.php" />
+        <option value="$PROJECT_DIR$/Database/db_swcpa.sql" />
         <option value="$PROJECT_DIR$/Views/pesquisar-aluno.php" />
-        <option value="$PROJECT_DIR$/Views/aluno-excluir.php" />
+        <option value="$PROJECT_DIR$/App/DAO/AlunoDAO.php" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
@@ -130,6 +182,28 @@
             <path>
               <item name="swcpa" type="b2602c69:ProjectViewProjectNode" />
               <item name="swcpa" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swcpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swcpa" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swcpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swcpa" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swcpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swcpa" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swcpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swcpa" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -143,7 +217,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/app_estoque-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -208,11 +282,14 @@
       <workItem from="1544123104727" duration="6416000" />
       <workItem from="1544141345914" duration="6148000" />
       <workItem from="1544204656123" duration="4135000" />
+      <workItem from="1544222774298" duration="134000" />
+      <workItem from="1544224561494" duration="1954000" />
+      <workItem from="1544246134840" duration="3659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163932000" />
+    <option name="totallyTimeSpent" value="169679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,12 +301,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13464448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13859275" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -241,6 +317,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -249,6 +326,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/style.css" />
@@ -262,7 +342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Views/rodape.php" />
     <entry file="file://$PROJECT_DIR$/App/Views/cadastrar-aluno.php" />
-    <entry file="file://$PROJECT_DIR$/../app_estoque-master/vendor/composer/autoload_real.php" />
+    <entry file="file://$USER_HOME$/app_estoque-master/vendor/composer/autoload_real.php" />
     <entry file="file://$PROJECT_DIR$/App/Views/cabecalho.php" />
     <entry file="file://$PROJECT_DIR$/Vendor/composer/ClassLoader.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -356,22 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Database/db_swcpa.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/cabecalho.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/DAO/UsuarioDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -379,41 +443,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/DAO/Conexao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DAO/ArquivoDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DAO/AlunoDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="71" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/aluno-excluir.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/Aluno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="90" column="43" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -431,17 +464,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/DAO/Conexao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/Aluno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Database/db_swcpa.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="117" selection-start-line="34" selection-start-column="117" selection-end-line="34" selection-end-column="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DAO/AlunoDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Views/pesquisar-aluno.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="952">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DAO/ArquivoDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/cadastrar-aluno.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="1688">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/cabecalho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
