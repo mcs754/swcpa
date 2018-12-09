@@ -5,7 +5,7 @@ include 'cabecalho.php';
 <div class="container cabecalho">
     <h1>Cadastrar nova pasta de arquivo morto</h1>
 </div>
-<form action="cadastrar-pasta.php" method="post">
+<form action="arquivo-cadastrar.php" method="post">
     <div class="container">
 <?php
 if ($_POST){

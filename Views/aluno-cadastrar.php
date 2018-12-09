@@ -5,11 +5,12 @@ include 'cabecalho.php';
 <div class="container cabecalho">
     <h1>Cadastrar nova pasta de estudante</h1>
 </div>
-<form action="cadastrar-aluno.php" method="post">
+<form action="aluno-cadastrar.php" method="post">
     <div class="container">
         <?php
         if ($_POST) {
             $a = new \App\Model\Aluno();
+            $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
             $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
             $a->setNumAluno($_POST['num_aluno']);
             $a->setCpfAluno($_POST['cpf_aluno']);
@@ -30,9 +31,9 @@ include 'cabecalho.php';
         </div>
         <div class="row">
             <div class="form-group col-md-3">
-                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
+                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome da pasta de arquivo morto</label>
                 <select name="id_arquivo_morto" class="form-control">
-                    <option disabled selected>Selecione a pasta</option>
+                    <option disabled selected>Selecione</option>
                     <?php
                     $arq = new \App\Model\Arquivo();
                     $aDAO = new \App\DAO\ArquivoDAO();
@@ -43,17 +44,9 @@ include 'cabecalho.php';
                     ?>
                 </select>
             </div>
-            <!--
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="id_arquivo_morto"><span class="text-danger">*</span> Número do arquivo</label>
-                    <input type="number" id="id_arquivo_morto" name="id_arquivo_morto" class="form-control" required>
-                </div>
-            </div>
-            -->
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta</label>
+                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta do estudante</label>
                     <input type="number" id="num_aluno" name="num_aluno" class="form-control" required>
                 </div>
             </div>

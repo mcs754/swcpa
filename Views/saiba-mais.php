@@ -33,6 +33,7 @@ include 'cabecalho.php';
             </figcaption>
         </figure>
     </p>
+    <!--
     <h1>Revisão teórica</i></h1>
     <p class="recuo">
         Segundo Gonçalves (2006), o debate acerca dos arquivos escolares tem-se tornado mais frequente a partir da
@@ -49,6 +50,7 @@ include 'cabecalho.php';
         singulares, tendo em vista não uma utilização ulterior, e sim, na maioria das vezes, um objetivo imediato,
         espontâneo ou não, sem a consciência da historicidade[...]” (ROUSSO, 1996, p.87).
     </p>
+    -->
     <h1>Conclusão</i></h1>
     <p class="recuo">
         Os objetivos propostos no desenvolvimento foram atingidos e o <i>swcpa</i> mostrou-se eficiente no tocante à

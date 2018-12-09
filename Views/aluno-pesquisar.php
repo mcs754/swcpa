@@ -12,21 +12,20 @@ include 'cabecalho.php';
     if (isset($_GET['msg']) && $_GET['msg'] == 2)
         echo "<div class='form-group alert alert-success'>Estudante alterado com sucesso!</div>";
     $a = new \App\Model\Aluno();
-    isset($_GET['parametro']) ? $a->setCpfAluno($_GET['parametro']) : $a->setCpfAluno("") ? $a->setNomeAluno($_GET['parametro']) : $a->setNomeAluno("") ? $a->setNomeMaeAluno($_GET['parametro']) : $a->setNomeMaeAluno("");
+    isset($_GET['nome_aluno']) ? $a->setNomeAluno($_GET['nome_aluno']) : $a->setNomeAluno("");
     $aDAO = new \App\DAO\AlunoDAO();
     $alunos = $aDAO->pesquisar($a);
     if (count($alunos) > 0) {
     ?>
     <table class='table-sm table-bordered table-condensed table-striped table-hover'>
         <tr class='text-center'>
-            <th width="10">Arquivo</th>
-            <th width="10">CPF</th>
-            <th width="30">Nascimento</th>
-            <th width="300" class="text-left">Nome</th>
-            <th width="300" class="text-left">Mãe</th>
-            <th width="300" class="text-left">Observação</th>
-            <th width="5"></th>
-            <th width="5"></th>
+            <th>Arquivo</th>
+            <th>CPF</th>
+            <th>Nascimento</th>
+            <th class="text-left">Nome</th>
+            <th class="text-left">Mãe</th>
+            <th class="text-left">Observação</th>
+            <th>Ações</th>
         </tr>
         <?php
         foreach ($alunos as $aluno) {
@@ -37,8 +36,10 @@ include 'cabecalho.php';
             echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
             echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
             echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-            echo "<td><a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
-            echo "<td><a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
+            echo "<td>
+                    <a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
+                    <a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
+                  </td>";
             echo "</tr>";
         }
         ?>
@@ -49,4 +50,3 @@ include 'cabecalho.php';
     echo "<div class='container alert alert-danger'>Não existem estudantes com a pesquisa informada!</div>";
 }
 include 'rodape.php'; ?>
-

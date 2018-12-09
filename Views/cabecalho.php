@@ -18,21 +18,20 @@ $uDAO->verificar();
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
     <div class="container">
-        <a title="Home" href="index.php"><img src="/Imagens/bg-swcpa.png"></a>
+        <a title="Home" href="index.php"><img src="/Imagens/bg_swcpa.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item mr-sm-5">
-                <a href="cadastrar-pasta.php" class="nav-link">Cadastrar arquivo</a>
+                <a href="arquivo-cadastrar.php" class="nav-link">Cadastrar arquivo</a>
             </li>
             <li class="nav-item mr-sm-5">
-                <a href="cadastrar-aluno.php" class="nav-link">Cadastrar estudante</a>
+                <a href="aluno-cadastrar.php" class="nav-link">Cadastrar estudante</a>
             </li>
             <li class="nav-item mr-sm-5">
                 <a href="saiba-mais.php" class="nav-link">Saiba mais</a>
             </li>
         </ul>
-        <form class="form-inline" action="pesquisar-aluno.php" method="get">
-            <input id="parametro" name="parametro" class="form-control mr-sm-2" type="text" placeholder="Pesquisar estudante" autofocus/>
-            <!--<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>-->
+        <form class="form-inline" action="aluno-pesquisar.php" method="get">
+            <input id="nome_aluno" name="nome_aluno" class="form-control mr-sm-2" type="text" placeholder="Pesquisar estudante" autofocus/>
             <input alt="submit" title="Pesquisar" type=image src="/Imagens/search_3994401.png" width="35" height="35"/>
         </form>
         <a class="navbar-nav nav-item " title='Sair' href="logoff.php"><img src='/Imagens/logout_3994458.png' width="32" height="32"></a>
@@ -45,7 +44,7 @@ $uDAO->verificar();
         date_default_timezone_set('America/Manaus');
         echo "<p class='font-italic'>";
         echo "Data de acesso: ";
-        echo strftime('%d/%m/%Y', strtotime('now'));
+        echo strftime('%d/%m/%Y.', strtotime('now'));
         echo "</p>";
         ?>
     </small>

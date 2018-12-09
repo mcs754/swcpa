@@ -9,7 +9,8 @@
 namespace App\Model;
 
 
-class Aluno {
+class Aluno
+{
     private $nome_arquivo_morto;
     private $id_aluno;
     private $id_arquivo_morto;
@@ -163,5 +164,4 @@ class Aluno {
     {
         $this->observacao_aluno = $observacao_aluno;
     }
-
 }

@@ -12,4 +12,4 @@ $a = new \App\Model\Aluno();
 $a->setIdAluno($_GET['id_aluno']);
 $aDAO = new \App\DAO\AlunoDAO();
 if ($aDAO->excluir($a))
-    header("Location:pesquisar-aluno.php?msg=1");
+    header("Location:aluno-pesquisar.php?msg=1");
