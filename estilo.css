@@ -1,40 +1,24 @@
 footer a:hover {
-    text-decoration: underline;
-}
-
+    text-decoration: underline;}
 .figure {
-    margin-right: 40px;
-}
-
+    margin-right: 40px;}
 .recuo {
     /*text-indent: 4em;*/
     text-align: justify;
-    line-height: 1.5;
-}
-
+    line-height: 1.5;}
 .info {
     margin-top: -7px;
-    padding: 10px;
-}
-
+    padding: 10px;}
 .img-login {
-    padding-top: 50px;
-}
-
+    padding-top: 50px;}
 .cabecalho {
     padding-top: 15px;
-    padding-bottom: 15px;
-}
-
+    padding-bottom: 15px;}
 .cabecalho > h1 {
-    font-size: 16pt;
-}
-
+    font-size: 16pt;}
 .form-signin {
     max-width: 390px;
-    margin: 0 auto;
-}
-
+    margin: 0 auto;}
 .form-signin .form-signin-heading,
 .form-signin .form-control {
     position: relative;
@@ -43,22 +27,15 @@ footer a:hover {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px;
-    font-size: 12pt;
-}
-
+    font-size: 12pt;}
 .form-signin .form-control:focus {
-    z-index: 2;
-}
-
+    z-index: 2;}
 .form-signin input[type="number"] {
     margin-top: -6px;
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
+    border-bottom-left-radius: 0;}
 .form-signin input[type="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
+    border-top-right-radius: 0;}

@@ -17,10 +17,10 @@ include 'cabecalho.php';
     $alunos = $aDAO->pesquisar($a);
     if (count($alunos) > 0) {
     ?>
-    <div class="table-responsive-md align-items-center">
-        <table class='table-sm table-bordered table-condensed table-striped table-hover'>
+    <div class="table-responsive-sm align-items-center">
+        <table class="table table-sm table-striped table-hover table-bordered">
             <thead>
-            <tr class='text-center'>
+            <tr class="text-center">
                 <th>Arquivo</th>
                 <th>CPF</th>
                 <th>Nascimento</th>
@@ -32,18 +32,20 @@ include 'cabecalho.php';
             </thead>
             <?php
             foreach ($alunos as $aluno) {
-                echo "<tr class='text-center'>";
-                echo "<td scope='row'>{$aluno->getNomeArquivoMorto()}-{$aluno->getNumAluno()}</td>";
-                echo "<td>{$aluno->getCpfAluno()}</td>";
-                echo "<td>" . \App\Helper\Data::get($aluno->getDataNascimentoAluno()) . "</td>";
-                echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
-                echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
-                echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-                echo "<td>
-                    <a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
-                    <a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
-                  </td>";
-                echo "</tr>";
+                echo "<tbody>";
+                    echo "<tr class='text-center'>";
+                        echo "<th scope='row'>{$aluno->getNomeArquivoMorto()}-{$aluno->getNumAluno()}</th>";
+                        echo "<td>{$aluno->getCpfAluno()}</td>";
+                        echo "<td>" . \App\Helper\Data::get($aluno->getDataNascimentoAluno()) . "</td>";
+                        echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
+                        echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
+                        echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
+                        echo "<td>
+                            <a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
+                            <a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
+                            </td>";
+                    echo "</tr>";
+                echo "</tbody>";
             }
             ?>
         </table>
