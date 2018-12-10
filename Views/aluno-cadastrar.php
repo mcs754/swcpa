@@ -13,7 +13,7 @@ include 'cabecalho.php';
             $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
             $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
             $a->setNumAluno($_POST['num_aluno']);
-            $a->setCpfAluno($_POST['cpf_aluno']);
+            !empty($_POST['cpf_aluno']) ? $a->setCpfAluno(\App\Helper\Cpf::set($_POST['cpf_aluno'])) : $a->setCpfAluno(null);
             !empty($_POST['data_nascimento_aluno']) ? $a->setDataNascimentoAluno(\App\Helper\Data::set($_POST['data_nascimento_aluno'])) : $a->setDataNascimentoAluno(null);
             $a->setNomeAluno($_POST['nome_aluno']);
             $a->setNomeMaeAluno($_POST['nome_mae_aluno']);
@@ -99,3 +99,4 @@ include 'cabecalho.php';
 <?php
 include 'rodape.php';
 ?>
+

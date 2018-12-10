@@ -33,8 +33,7 @@ $uDAO->verificar();
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="arquivo-cadastrar.php">Novo cadastro</a>
-                    <a class="dropdown-item" href="arquivo-pesquisar.php">Pesquisa avançada</a>
-                    <a class="dropdown-item" href="arquivo-relatorios.php">Relatórios</a>
+                    <a class="dropdown-item" href="arquivo-listar-todos.php">Listar todos</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -43,7 +42,7 @@ $uDAO->verificar();
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="aluno-cadastrar.php">Novo cadastro</a>
-                    <a class="dropdown-item" href="aluno-pesquisar-avancado.php">Pesquisa avançada</a>
+                    <a class="dropdown-item" href="aluno-listar-todos.php">Listar todos</a>
                 </div>
             </li>
 
