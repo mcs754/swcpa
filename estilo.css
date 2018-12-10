@@ -1,14 +1,15 @@
-a:link {
-    text-decoration: none;
+footer a:hover {
+    text-decoration: underline;
 }
 
-.figure{
+.figure {
     margin-right: 40px;
 }
 
 .recuo {
-    text-indent: 4em;
+    /*text-indent: 4em;*/
     text-align: justify;
+    line-height: 1.5;
 }
 
 .info {
@@ -21,21 +22,12 @@ a:link {
 }
 
 .cabecalho {
-    padding-left: 15px;
-    padding-top: 0px;
+    padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: -15pt;
 }
 
 .cabecalho > h1 {
     font-size: 16pt;
-}
-
-.rodape {
-    text-align: right;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0 auto;
 }
 
 .form-signin {

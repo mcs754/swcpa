@@ -17,33 +17,37 @@ include 'cabecalho.php';
     $alunos = $aDAO->pesquisar($a);
     if (count($alunos) > 0) {
     ?>
-    <table class='table-sm table-bordered table-condensed table-striped table-hover'>
-        <tr class='text-center'>
-            <th>Arquivo</th>
-            <th>CPF</th>
-            <th>Nascimento</th>
-            <th class="text-left">Nome</th>
-            <th class="text-left">Mãe</th>
-            <th class="text-left">Observação</th>
-            <th>Ações</th>
-        </tr>
-        <?php
-        foreach ($alunos as $aluno) {
-            echo "<tr class='text-center'>";
-            echo "<td>{$aluno->getNomeArquivoMorto()}-{$aluno->getNumAluno()}</td>";
-            echo "<td>{$aluno->getCpfAluno()}</td>";
-            echo "<td>" . \App\Helper\Data::get($aluno->getDataNascimentoAluno()) . "</td>";
-            echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
-            echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
-            echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-            echo "<td>
+    <div class="table-responsive-md align-items-center">
+        <table class='table-sm table-bordered table-condensed table-striped table-hover'>
+            <thead>
+            <tr class='text-center'>
+                <th>Arquivo</th>
+                <th>CPF</th>
+                <th>Nascimento</th>
+                <th class="text-left">Nome</th>
+                <th class="text-left">Mãe</th>
+                <th class="text-left">Observação</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <?php
+            foreach ($alunos as $aluno) {
+                echo "<tr class='text-center'>";
+                echo "<td scope='row'>{$aluno->getNomeArquivoMorto()}-{$aluno->getNumAluno()}</td>";
+                echo "<td>{$aluno->getCpfAluno()}</td>";
+                echo "<td>" . \App\Helper\Data::get($aluno->getDataNascimentoAluno()) . "</td>";
+                echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
+                echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
+                echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
+                echo "<td>
                     <a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
                     <a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
                   </td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </div>
 </div>
 <?php
 } else {

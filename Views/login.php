@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <form action="login.php" method="post" class="form-signin">
-        <h2 class="form-signin-heading"><a href="login.php"><img class="img-login" src="/Imagens/bg-swcpa.png"><br></a><p>Sistema Web para Cadastro de Pastas de Alunos</p></h2>
+        <h2 class="form-signin-heading"><a href="login.php"><img class="img-login" src="/Imagens/bg_swcpa.png"><br></a><p>Sistema Web para Cadastro de Pastas de Alunos</p></h2>
         <?php
         if ($_POST){
             include '../vendor/autoload.php';

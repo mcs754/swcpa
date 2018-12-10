@@ -31,7 +31,7 @@ include 'cabecalho.php';
         </div>
         <div class="row">
             <div class="form-group col-md-3">
-                <label for="id_arquivo_morto"><span class="text-danger">*</span> Nome da pasta de arquivo morto</label>
+                <label for="id_arquivo_morto"><span class="text-danger">*</span> Arquivo morto</label>
                 <select name="id_arquivo_morto" class="form-control">
                     <option disabled selected>Selecione</option>
                     <?php
@@ -46,19 +46,19 @@ include 'cabecalho.php';
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta do estudante</label>
+                    <label for="num_aluno"><span class="text-danger">*</span> Número da pasta</label>
                     <input type="number" id="num_aluno" name="num_aluno" class="form-control" required>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="cpf_aluno">CPF do estudante</label>
+                    <label for="cpf_aluno">CPF</label>
                     <input type="number" id="cpf_aluno" name="cpf_aluno" class="form-control">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label for="data_nascimento_aluno"><span class="text-danger">*</span> Data de nascimento</label>
+                    <label for="data_nascimento_aluno"><span class="text-danger">*</span> Nascimento</label>
                     <input type="date" id="data_nascimento_aluno" name="data_nascimento_aluno" class="form-control" required>
                 </div>
             </div>
