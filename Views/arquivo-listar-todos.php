@@ -22,7 +22,7 @@ if (count($arquivos) > 0) {
             <tr class="text-center">
                 <th>ID</th>
                 <th>Arquivo</th>
-                <th>Ações</th>
+                <th colspan="2">Ações</th>
             </tr>
             </thead>
             <?php
@@ -31,10 +31,8 @@ if (count($arquivos) > 0) {
                 echo "<tr class='text-center'>";
                 echo "<td scope='row'>{$arquivo->getIdArquivoMorto()}</td>";
                 echo "<td class='text-capitalize'>{$arquivo->getNomeArquivoMorto()}</td>";
-                echo "<td>
-                            <a href='#'={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
-                            <a href='#'={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
-                            </td>";
+                echo "<td><a href='#'={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
+                echo "<td><a href='#'={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
                 echo "</tr>";
                 echo "</tbody>";
             }

@@ -27,7 +27,7 @@ if (count($alunos) > 0) {
                 <th class="text-left">Nome</th>
                 <th class="text-left">Mãe</th>
                 <th class="text-left">Observação</th>
-                <th>Ações</th>
+                <th colspan="2">Ações</th>
             </tr>
             </thead>
             <?php
@@ -40,10 +40,8 @@ if (count($alunos) > 0) {
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
                 echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-                echo "<td>
-                            <a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a>
-                            <a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a>
-                            </td>";
+                echo "<td><a href='aluno-alterar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
+                echo "<td><a href='aluno-excluir.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
                 echo "</tr>";
                 echo "</tbody>";
             }
