@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
         <h2 class="form-signin-heading"><a href="login.php"><img class="img-login" src="/Imagens/bg_swcpa.png"><br></a><p>Sistema Web para Cadastro de Pastas de Alunos</p></h2>
         <?php
         if ($_POST){
-            include '../vendor/autoload.php';
+            include '../Vendor/autoload.php';
             $u = new \App\Model\Usuario();
             $u->setCpf($_POST['cpf']);
             $u->setSenha($_POST['senha']);

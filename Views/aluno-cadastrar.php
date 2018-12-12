@@ -11,7 +11,6 @@ include 'cabecalho.php';
         if ($_POST) {
             $a = new \App\Model\Aluno();
             $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
-            $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
             $a->setNumAluno($_POST['num_aluno']);
             $a->setCpfAluno($_POST['cpf_aluno']);
             !empty($_POST['data_nascimento_aluno']) ? $a->setDataNascimentoAluno(\App\Helper\Data::set($_POST['data_nascimento_aluno'])) : $a->setDataNascimentoAluno(null);

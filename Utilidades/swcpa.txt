@@ -1,0 +1,4 @@
+﻿**Acesso banco de dados webhost**
+Nome do BD: id8124258_db_swcpa
+Usuário: id8124258_admin
+Senha: marechaL

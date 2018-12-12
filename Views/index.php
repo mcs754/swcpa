@@ -8,6 +8,7 @@ include 'cabecalho.php';
             Aqui você poderá gerenciar o arquivo escolar da EEEMTI Marechal Rondon.
         </div>
     </div>
+    <!--
     <div class="container"
     <div class="row">
         <div class="col">
@@ -51,8 +52,7 @@ include 'cabecalho.php';
             </div>
         </div>
     </div>
-    </div>
-    <br>
+    </div>-->
 <?php
 include 'rodape.php';
 ?>
