@@ -104,6 +104,11 @@ $alunos = $aDAO->pesquisarUm($a);
                     <button type="submit" class="btn btn-outline-success btn-block">Alterar</button>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-secondary btn-block" onClick="history.go(-1)">Voltar</button>
+                </div>
+            </div>
         </div>
     </div>
 </form>

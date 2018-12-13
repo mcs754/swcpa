@@ -23,7 +23,7 @@ class ArquivoDAO extends Conexao {
     }
 
     public function pesquisarArquivos(){
-        $sql = "select * from arquivo_morto";
+        $sql = "select arquivo_morto.id_arquivo_morto, arquivo_morto.nome_arquivo_morto from arquivo_morto order by arquivo_morto.nome_arquivo_morto;";
         try{
             $a = $this->conexao->prepare($sql);
             $a->execute();
@@ -34,10 +34,11 @@ class ArquivoDAO extends Conexao {
     }
 
 
-    public function contarAlunos(){
-        $sql = "select count(id_aluno) as num_estudantes from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto;";
+    public function contarAlunos($arquivo){
+        $sql = "select count(id_aluno) as num_estudantes from aluno inner join arquivo_morto on aluno.id_arquivo_morto = arquivo_morto.id_arquivo_morto where arquivo_morto.id_arquivo_morto = :id_arquivo_morto;";
         try{
             $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
             $a->execute();
             return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Arquivo");
         } catch (\PDOException $e){
@@ -84,5 +85,4 @@ class ArquivoDAO extends Conexao {
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
     }
-
 }

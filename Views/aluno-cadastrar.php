@@ -92,6 +92,11 @@ include 'cabecalho.php';
                     <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <a type="link" class="btn btn-outline-secondary btn-block" href="index.php">Cancelar</a>
+                </div>
+            </div>
         </div>
     </div>
 </form>

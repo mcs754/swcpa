@@ -1,3 +1,6 @@
+footer{
+    float: right;
+    margin-bottom: 5px;}
 footer a:hover {
     text-decoration: underline;}
 .figure {
@@ -38,6 +41,4 @@ footer a:hover {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;}
-footer{
-    float: right;
-    margin-bottom: 5px;}
+
