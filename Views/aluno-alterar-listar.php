@@ -25,14 +25,14 @@ if ($_POST) {
     $a2->setObservacaoAluno($_POST['observacao_aluno']);
     $a2DAO = new \App\DAO\AlunoDAO();
     if ($a2DAO->alterar($a2))
-        header("Location: aluno-pesquisar.php?msg=2");
+        header("Location: aluno-listar-todos.php?msg=2");
 }
 $a = new \App\Model\Aluno();
 isset($_GET) ? $a->setIdAluno($_GET['id_aluno']) : $a->setIdAluno($_POST['id_aluno']);
 $aDAO = new \App\DAO\AlunoDAO();
 $alunos = $aDAO->pesquisarUm($a);
 ?>
-<form action="aluno-alterar.php" method="post">
+<form action="aluno-alterar-listar.php" method="post">
     <div class="container">
         <div class="form-group alert alert-secondary" role="alert">
             <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
@@ -110,4 +110,3 @@ $alunos = $aDAO->pesquisarUm($a);
 <?php
 include 'rodape.php';
 ?>
-

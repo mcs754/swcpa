@@ -4,7 +4,6 @@ footer a:hover {
     margin-right: 40px;}
 .recuo {
     /*text-indent: 4em;*/
-    text-align: justify;
     line-height: 1.5;}
 .info {
     margin-top: -7px;
@@ -12,7 +11,7 @@ footer a:hover {
 .img-login {
     padding-top: 50px;}
 .cabecalho {
-    padding-top: 50px;
+    padding-top: 35px;
     padding-bottom: 15px;}
 .cabecalho > h1 {
     font-size: 16pt;}
@@ -39,3 +38,6 @@ footer a:hover {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;}
+footer{
+    float: right;
+    margin-bottom: 5px;}

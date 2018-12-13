@@ -22,27 +22,67 @@ class ArquivoDAO extends Conexao {
         }
     }
 
-    /*public function pesquisarArquivos($arquivo_morto = null){
-        $sql = "select * from arquivo_morto order by nome_arquivo_morto";
-        try{
-            $p = $this->conexao->prepare($sql);
-            $p->execute();
-            return $p->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Arquivo");
-        } catch (\PDOException $e){
-            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
-        }
-    }*/
-
-    public function pesquisarArquivos($arquivo_morto){
-        $sql = "select * from arquivo_morto order by nome_arquivo_morto";
+    public function pesquisarArquivos(){
+        $sql = "select * from arquivo_morto";
         try{
             $a = $this->conexao->prepare($sql);
-            $a->bindValue(":nome_arquivo_morto", $arquivo_morto->getNomeArquivoMorto());
             $a->execute();
             return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Arquivo");
         } catch (\PDOException $e){
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
     }
-}
 
+
+    public function contarAlunos(){
+        $sql = "select count(id_aluno) as num_estudantes from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto;";
+        try{
+            $a = $this->conexao->prepare($sql);
+            $a->execute();
+            return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Arquivo");
+        } catch (\PDOException $e){
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function excluir($arquivo)
+    {
+        $sql = "delete from arquivo_morto where id_arquivo_morto = :id_arquivo_morto";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
+            $a->execute();
+            return true;
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function alterar($arquivo)
+    {
+        $sql = "update arquivo_morto set nome_arquivo_morto = :nome_arquivo_morto where id_arquivo_morto = :id_arquivo_morto";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
+            $a->bindValue(":nome_arquivo_morto", $arquivo->getNomeArquivoMorto());
+            $a->execute();
+            return true;
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function pesquisarUm($arquivo)
+    {
+        $sql = "select * from arquivo_morto where id_arquivo_morto = :id_arquivo_morto ";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
+            $a->execute();
+            return $a->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+}

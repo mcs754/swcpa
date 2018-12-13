@@ -43,19 +43,6 @@ class AlunoDAO extends Conexao
         }
     }
 
-    public function pesquisarUm($aluno)
-    {
-        $sql = "select * from aluno inner join arquivo_morto on aluno.id_arquivo_morto = arquivo_morto.id_arquivo_morto where id_aluno = :id_aluno ";
-        try {
-            $a = $this->conexao->prepare($sql);
-            $a->bindValue(":id_aluno", $aluno->getIdAluno());
-            $a->execute();
-            return $a->fetch(\PDO::FETCH_ASSOC);
-        } catch (\PDOException $e) {
-            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
-        }
-    }
-
     public function excluir($aluno)
     {
         $sql = "delete from aluno where id_aluno = :id_aluno";
@@ -84,6 +71,21 @@ class AlunoDAO extends Conexao
             $a->bindValue(":id_aluno", $aluno->getIdAluno());
             $a->execute();
             return true;
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+
+
+    }
+
+    public function pesquisarUm($aluno)
+    {
+        $sql = "select * from aluno inner join arquivo_morto on aluno.id_arquivo_morto = arquivo_morto.id_arquivo_morto where id_aluno = :id_aluno ";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_aluno", $aluno->getIdAluno());
+            $a->execute();
+            return $a->fetch(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }

@@ -12,4 +12,4 @@ $a = new \App\Model\Arquivo();
 $a->setIdArquivoMorto($_GET['id_arquivo_morto']);
 $aDAO = new \App\DAO\ArquivoDAO();
 if ($aDAO->excluir($a))
-    header("Location:aluno-listar-todos.php?msg=1");
+    header("Location:arquivo-listar-todos.php?msg=1");

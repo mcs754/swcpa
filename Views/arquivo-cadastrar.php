@@ -17,24 +17,24 @@ if ($_POST){
 }
 ?>
         <div class="form-group alert alert-secondary" role="alert">
-            <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
-                    <input type="text" id="nome_arquivo_morto" name="nome_arquivo_morto" class="form-control" required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
-                </div>
-            </div>
+    <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
+            <input type="text" id="nome_arquivo_morto" name="nome_arquivo_morto" class="form-control" required>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
+        </div>
+    </div>
+</div>
+</div>
 </form>
 <?php
 include 'rodape.php';
