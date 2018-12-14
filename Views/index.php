@@ -4,8 +4,13 @@ include 'cabecalho.php';
 ?>
     <div class="container cabecalho recuo">
         <h1>Bem-vindo ao swcpa!</h1>
-        <div>
-            Aqui você poderá gerenciar o arquivo escolar da EEEMTI Marechal Rondon.
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquam at consequuntur dolorum
+            ducimus ipsa laboriosam necessitatibus, numquam perferendis possimus qui quidem quisquam reiciendis
+            reprehenderit saepe similique sit unde!
+        </div>
+        <div>Alias aliquam assumenda blanditiis commodi cum dignissimos eligendi eveniet illo illum incidunt itaque
+            laudantium magnam, obcaecati officia officiis omnis possimus provident quasi reprehenderit, repudiandae
+            soluta sunt tempora velit veniam voluptate.
         </div>
     </div>
     <!--

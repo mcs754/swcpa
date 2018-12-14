@@ -22,7 +22,7 @@ class ArquivoDAO extends Conexao {
         }
     }
 
-    public function pesquisarArquivos(){
+    public function pesquisar(){
         $sql = "select arquivo_morto.id_arquivo_morto, arquivo_morto.nome_arquivo_morto from arquivo_morto order by arquivo_morto.nome_arquivo_morto;";
         try{
             $a = $this->conexao->prepare($sql);

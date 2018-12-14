@@ -17,7 +17,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 2)
     echo "<div class='form-group alert alert-success'>Arquivo morto alterado com sucesso!</div>";
 $arq = new \App\Model\Arquivo();
 $aDAO = new \App\DAO\ArquivoDAO();
-$arquivos = $aDAO->pesquisarArquivos();
+$arquivos = $aDAO->pesquisar($arq);
 if (count($arquivos) > 0 ){
 ?>
     <div class="table-responsive-sm align-items-center">
@@ -26,7 +26,7 @@ if (count($arquivos) > 0 ){
             <tr class="text-center">
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Pastas</th>
+                <!--<th>Pastas</th>-->
                 <th colspan="3">Ações</th>
             </tr>
             </thead>
@@ -34,12 +34,11 @@ if (count($arquivos) > 0 ){
             foreach ($arquivos as $arquivo) {
                 echo "<tr class='text-center'>";
                 echo "<td scope='row'>{$arquivo->getIdArquivoMorto()}</td>";
-                echo "<td style='border-right: none;'>O arquivo morto - <b>{$arquivo->getNomeArquivoMorto()}</b></td>";
-                echo "<td style='border-left: none;'>possui {$arquivo->getNumEstudantes()} pastas</td>";
+                echo "<td>Arquivo - <b>{$arquivo->getNomeArquivoMorto()}</b></td>";
+                //echo "<td style='border-left: none;'>{$arquivo->getNumEstudantes()}</td>";
                 echo "<td><a href='arquivo-alterar.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
                 echo "<td><a href='arquivo-excluir.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
                 echo "<td><a href='#'{$arquivo->getIdArquivoMorto()}'><img src='/Imagens/print_3994410.png' width='20' heght='20' title='Imprimir'></a></td>";
-                //echo "<td><button style='border-radius: 1px;' type='button' class='btn btn-outline-secondary btn-sm btn-block'>Espelho</button>";
                 echo "</tr>";
             }
             ?>

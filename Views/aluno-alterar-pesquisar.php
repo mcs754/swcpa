@@ -47,7 +47,7 @@ $alunos = $aDAO->pesquisarUm($a);
                     <?php
                     $arq = new \App\Model\Arquivo();
                     $aDAO = new \App\DAO\ArquivoDAO();
-                    $arquivos = $aDAO->pesquisarArquivos($arq);
+                    $arquivos = $aDAO->pesquisar($arq);
                     foreach ($arquivos as $arquivo) {
                         echo "<option value='{$arquivo->getIdArquivoMorto()}'>{$arquivo->getNomeArquivoMorto()}</option>";
                     }
