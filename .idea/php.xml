@@ -4,6 +4,14 @@
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/css" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/metadata" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/scss" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/js" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/svgs" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/less" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/sprites" />
+      <path value="$PROJECT_DIR$/Vendor/font-awesome/webfonts" />
     </include_path>
   </component>
   <component name="PhpUnit">

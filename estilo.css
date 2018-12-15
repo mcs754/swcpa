@@ -1,3 +1,7 @@
+a > i{
+    color: #444;}
+a i:hover{
+    color: #111;}
 footer{
     float: right;
     margin-bottom: 5px;}

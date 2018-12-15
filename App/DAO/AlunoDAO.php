@@ -74,8 +74,6 @@ class AlunoDAO extends Conexao
         } catch (\PDOException $e) {
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
-
-
     }
 
     public function pesquisarUm($aluno)
@@ -86,6 +84,19 @@ class AlunoDAO extends Conexao
             $a->bindValue(":id_aluno", $aluno->getIdAluno());
             $a->execute();
             return $a->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
+
+    public function pesquisarImprimir($aluno)
+    {
+        $sql = "select nome_arquivo_morto, id_aluno, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where aluno.id_arquivo_morto = :id_arquivo_morto order by num_aluno";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":id_arquivo_morto", $aluno->getIdArquivoMorto());
+            $a->execute();
+            return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Aluno");
         } catch (\PDOException $e) {
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }

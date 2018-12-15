@@ -12,7 +12,6 @@ namespace App\Model;
 class Arquivo {
     private $id_arquivo_morto;
     private $nome_arquivo_morto;
-    private $num_estudantes;
 
     /**
      * @return mixed
@@ -44,21 +43,5 @@ class Arquivo {
     public function setNomeArquivoMorto($nome_arquivo_morto)
     {
         $this->nome_arquivo_morto = $nome_arquivo_morto;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNumEstudantes()
-    {
-        return $this->num_estudantes;
-    }
-
-    /**
-     * @param mixed $num_estudantes
-     */
-    public function setNumEstudantes($num_estudantes)
-    {
-        $this->num_estudantes = $num_estudantes;
     }
 }

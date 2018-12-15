@@ -2,62 +2,51 @@
 $titulo = "swcpa";
 include 'cabecalho.php';
 ?>
-    <div class="container cabecalho recuo">
-        <h1>Bem-vindo ao swcpa!</h1>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquam at consequuntur dolorum
-            ducimus ipsa laboriosam necessitatibus, numquam perferendis possimus qui quidem quisquam reiciendis
-            reprehenderit saepe similique sit unde!
-        </div>
-        <div>Alias aliquam assumenda blanditiis commodi cum dignissimos eligendi eveniet illo illum incidunt itaque
-            laudantium magnam, obcaecati officia officiis omnis possimus provident quasi reprehenderit, repudiandae
-            soluta sunt tempora velit veniam voluptate.
-        </div>
-    </div>
-    <!--
-    <div class="container"
+<div class="container cabecalho recuo">
+    <h1>Bem-vindo ao swcpa!</h1>
     <div class="row">
-        <div class="col">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                </ol>
-                <div class="carousel-inner" style="box-shadow: 0px 0px 5px #999;">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/Imagens/teste_3994170.png" alt="Primeiro Slide">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 style="text-shadow: 0px 0px 5px #000;">Café científico</h5>
-                            <p style="text-shadow: 0px 0px 5px #000;">Inscrições abertas, online e gratuitas</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/Imagens/teste_3994171.png" alt="Primeiro Slide">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 style="text-shadow: 0px 0px 5px #000;">Odontologia</h5>
-                            <p style="text-shadow: 0px 0px 5px #000;">Conheça a escola de ensino especializado em odontologia</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/Imagens/teste_3994172.png" alt="Primeiro Slide">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 style="text-shadow: 0px 0px 5px #000;">Corpo docente qualificado</h5>
-                            <p style="text-shadow: 0px 0px 5px #000;">Quadro de profissionais composto por renomados dentistas</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
-            </div>
+        <div class="col-sm-8">
+            Aqui você poderá gerenciar o arquivo escolar da Escola Estadual de Ensino Médio em Tempo Integral Marechal
+            Rondon.
+            A seguir, listamos algumas recomendações importantes.
+            <ul>
+                <li>
+                    Recomendamos nomear a pasta de arquivo morto apenas com a letra inicial do nome dos estudantes que
+                    estão dentro da mesma, em seguida do seu número. Exemplo: <b>A1</b>, que neste caso refere-se a pasta
+                    de arquivo morto de estudantes com nomes que começam com a letra <b>A</b>, sendo esta a primeira
+                    pasta, seu número é <b>1</b>. Outro caso seria das pastas de estudantes formandos. Exemplo:
+                    <b>Formandos 2018</b>, que neste caso refere-se à pasta de estudantes que concluíram o ensino
+                    médio no ano de 2018.
+                </li>
+                <li>
+                    Se você clicar no menu <a href="arquivo-listar-todos.php" style="text-decoration: none;"><kbd>Listar
+                    todos</kbd></a> da aba Arquivo, serão listadas através de uma tabela, todas as pastas de arquivo
+                    morto cadastradas. Nestas pastas existem estudantes vinculados, portanto, pense duas vezes
+                    antes de excluir uma pasta. Uma vez que se exclua uma pasta de aquivo morto,
+                    os estudantes vinculados serão excluídos para sempre.
+                </li>
+                <li>
+                    Quando você for alterar uma pasta de estudante, o campo de observação não preenche automaticamente
+                    os dados gravados como acontece com o restante dos campos. Recomendamos que se leia antes a observação
+                    que está salva e decida se deve ou não digitá-la novamente.
+                </li>
+                <li>
+                    No arquivo da escola mencionada existem pastas de estudantes guardadas desde 1981. Portanto,
+                    quanto menos acessos físicos às pastas, melhor pra elas.
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
         </div>
     </div>
-    </div>-->
+    <nav class="navbar" style="background-color: #e3f2fd;">
+        <div class="nav-item">
+            <i class="fas fa-info-circle" title="Informação"></i> Em caso de dúvidas, envie e-mail para o
+            <a href="mailto:mcs754@gmail.com" class="link">administrador</a>. Antes de realizar alterações nos registros
+            salvos, certifique-se de que realmente é necessário.
+        </div>
+    </nav>
+</div>
 <?php
 include 'rodape.php';
 ?>

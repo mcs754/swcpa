@@ -38,8 +38,8 @@ if (count($alunos) > 0) {
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
                 echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-                echo "<td><a href='aluno-alterar-listar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
-                echo "<td><a href='aluno-excluir-listar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
+                echo "<td><a href='aluno-alterar-listar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-edit' title='Alterar'></i></a></td>";
+                echo "<td><a href='aluno-excluir-listar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
                 echo "</tr>";
             }
             ?>
@@ -50,4 +50,3 @@ if (count($alunos) > 0) {
 }
 include 'rodape.php';
 ?>
-

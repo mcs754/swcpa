@@ -6,9 +6,11 @@ include 'cabecalho.php';
     <h1>Lista de todas as pastas de arquivo morto cadastradas</h1>
 </div>
 <div class="container">
-    <div class="text-center alert alert-danger" role="alert">
-        <h5 class="mb-0 alert-heading">Atenção!</h5>
-        <p class="mb-0">A exclusão de uma pasta de arquivo morto irá apagar todas as pastas de estudantes vinculadas!</p>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Atenção!</strong> A exclusão de uma pasta de arquivo morto irá apagar todas as pastas de estudantes vinculadas!
     </div>
 <?php
 if (isset($_GET['msg']) && $_GET['msg'] == 1)
@@ -26,7 +28,6 @@ if (count($arquivos) > 0 ){
             <tr class="text-center">
                 <th>ID</th>
                 <th>Nome</th>
-                <!--<th>Pastas</th>-->
                 <th colspan="3">Ações</th>
             </tr>
             </thead>
@@ -34,11 +35,10 @@ if (count($arquivos) > 0 ){
             foreach ($arquivos as $arquivo) {
                 echo "<tr class='text-center'>";
                 echo "<td scope='row'>{$arquivo->getIdArquivoMorto()}</td>";
-                echo "<td>Arquivo - <b>{$arquivo->getNomeArquivoMorto()}</b></td>";
-                //echo "<td style='border-left: none;'>{$arquivo->getNumEstudantes()}</td>";
-                echo "<td><a href='arquivo-alterar.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
-                echo "<td><a href='arquivo-excluir.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
-                echo "<td><a href='#'{$arquivo->getIdArquivoMorto()}'><img src='/Imagens/print_3994410.png' width='20' heght='20' title='Imprimir'></a></td>";
+                echo "<td>Pasta {$arquivo->getNomeArquivoMorto()}</td>";
+                echo "<td><a href='arquivo-alterar.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><i class='fa fa-edit' title='Alterar'></i></a></td>";
+                echo "<td><a onclick='confirmar()' href='arquivo-excluir.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
+                echo "<td><a target='_blank' rel='noopener noreferrer' href='arquivo-imprimir.php?id_arquivo_morto={$arquivo->getIdArquivoMorto()}'><i class='fa fa-print' title='Imprimir'></i></a></td>";
                 echo "</tr>";
             }
             ?>
@@ -49,3 +49,35 @@ if (count($arquivos) > 0 ){
 }
 include 'rodape.php';
 ?>
+<script language ="JavaScript">
+    function confirmar(){
+        if (!confirm ("Deseja realmente excluir esse registro?"))
+            return false;
+        else
+            return true;
+    }
+</script>
+
+<div class="modal fade" id="confirmaExcluir" tabindex="-1" role="dialog" aria-labelledby="confirmaExcluir" aria-hidden="true" data-toggle='modal' data-target='#confirmaExcluir'>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmaExcluir">Confirmar exclusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente excluir essa pasta de arquivo morto?<br>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <button type="button" class="btn btn-outline-secondary btn-block" data-dismiss="modal"><i class="fas fa-ban"></i> Cancelar</button>
+                </div>
+                <div class="container">
+                    <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash-alt"></i> Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

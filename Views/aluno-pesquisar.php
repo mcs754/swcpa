@@ -41,8 +41,8 @@ while ($b != ""){ //se a pesquisa não tiver nenhum caractere, o while não perm
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeAluno()}</td>";
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
                 echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
-                echo "<td><a href='aluno-alterar-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/edit_3994420.png' width='18' heght='18' title='Alterar'></a></td>";
-                echo "<td><a href='aluno-excluir-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><img src='/Imagens/delete_3994410.png' width='18' heght='18' title='Excluir'></a></td>";
+                echo "<td><a href='aluno-alterar-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-edit' title='Alterar'></i></a></td>";
+                echo "<td><a href='aluno-excluir-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
                 echo "</tr>";
             }
             ?>

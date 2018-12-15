@@ -20,7 +20,7 @@ if ($_POST){
     <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
             <input type="text" id="nome_arquivo_morto" name="nome_arquivo_morto" class="form-control" required>

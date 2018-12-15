@@ -75,7 +75,7 @@ class ArquivoDAO extends Conexao {
 
     public function pesquisarUm($arquivo)
     {
-        $sql = "select * from arquivo_morto where id_arquivo_morto = :id_arquivo_morto ";
+        $sql = "select * from arquivo_morto where arquivo_morto.id_arquivo_morto = :id_arquivo_morto ";
         try {
             $a = $this->conexao->prepare($sql);
             $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
