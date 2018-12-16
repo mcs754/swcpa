@@ -1,12 +1,14 @@
-a > i{
+td > a > i{
     color: #444;}
-a i:hover{
+td > a i:hover{
     color: #111;}
 footer{
     float: right;
     margin-bottom: 5px;}
 footer a:hover {
     text-decoration: underline;}
+input[type="search"]:focus{
+    border-color: #ced4da; box-shadow: 0 0 0 0; outline: 0;}
 .figure {
     margin-right: 40px;}
 .recuo {
@@ -45,4 +47,3 @@ footer a:hover {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;}
-

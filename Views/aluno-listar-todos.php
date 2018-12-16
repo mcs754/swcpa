@@ -39,7 +39,7 @@ if (count($alunos) > 0) {
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
                 echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
                 echo "<td><a href='aluno-alterar-listar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-edit' title='Alterar'></i></a></td>";
-                echo "<td><a href='aluno-excluir-listar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
+                echo "<td><a href='aluno-excluir-listar.php?id_aluno={$aluno->getIdAluno()}' onclick='excluir_registro(event);'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
                 echo "</tr>";
             }
             ?>
@@ -50,3 +50,17 @@ if (count($alunos) > 0) {
 }
 include 'rodape.php';
 ?>
+<script>
+    function excluir_registro(e) {
+        if (!confirm("Deseja realmente excluir?"))
+            cancelOperation(event);
+    }
+
+    function cancelOperation(e) {
+        var evt = e || window.event;
+        if (evt.preventDefault())
+            evt.preventDefault();
+        else
+            evt.returnValue = false;
+    }
+</script>

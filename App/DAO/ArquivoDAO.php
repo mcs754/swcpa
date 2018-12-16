@@ -46,8 +46,7 @@ class ArquivoDAO extends Conexao {
         }
     }
 
-    public function excluir($arquivo)
-    {
+    public function excluir($arquivo){
         $sql = "delete from arquivo_morto where id_arquivo_morto = :id_arquivo_morto";
         try {
             $a = $this->conexao->prepare($sql);
@@ -59,13 +58,12 @@ class ArquivoDAO extends Conexao {
         }
     }
 
-    public function alterar($arquivo)
-    {
-        $sql = "update arquivo_morto set nome_arquivo_morto = :nome_arquivo_morto where id_arquivo_morto = :id_arquivo_morto";
+    public function alterar($arquivo){
+        $sql = "update arquivo_morto set nome_arquivo_morto = :nome_arquivo_morto where arquivo_morto.id_arquivo_morto = :id_arquivo_morto";
         try {
             $a = $this->conexao->prepare($sql);
-            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
             $a->bindValue(":nome_arquivo_morto", $arquivo->getNomeArquivoMorto());
+            $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());
             $a->execute();
             return true;
         } catch (\PDOException $e) {
@@ -73,9 +71,8 @@ class ArquivoDAO extends Conexao {
         }
     }
 
-    public function pesquisarUm($arquivo)
-    {
-        $sql = "select * from arquivo_morto where arquivo_morto.id_arquivo_morto = :id_arquivo_morto ";
+    public function pesquisarUm($arquivo){
+        $sql = "select * from arquivo_morto where arquivo_morto.id_arquivo_morto = :id_arquivo_morto";
         try {
             $a = $this->conexao->prepare($sql);
             $a->bindValue(":id_arquivo_morto", $arquivo->getIdArquivoMorto());

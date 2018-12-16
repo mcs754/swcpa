@@ -42,7 +42,7 @@ while ($b != ""){ //se a pesquisa não tiver nenhum caractere, o while não perm
                 echo "<td class='text-left text-capitalize'>{$aluno->getNomeMaeAluno()}</td>";
                 echo "<td class='text-left text-lowercase'>{$aluno->getObservacaoAluno()}</td>";
                 echo "<td><a href='aluno-alterar-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-edit' title='Alterar'></i></a></td>";
-                echo "<td><a href='aluno-excluir-pesquisar.php?id_aluno={$aluno->getIdAluno()}'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
+                echo "<td><a href='aluno-excluir-pesquisar.php?id_aluno={$aluno->getIdAluno()}' onclick='excluir_registro(event);'><i class='fa fa-trash-alt' title='Excluir'></i></a></td>";
                 echo "</tr>";
             }
             ?>
@@ -59,3 +59,17 @@ break;
 <?php
 include 'rodape.php';
 ?>
+<script>
+    function excluir_registro(e) {
+        if (!confirm("Deseja realmente excluir?"))
+            cancelOperation(event);
+    }
+
+    function cancelOperation(e) {
+        var evt = e || window.event;
+        if (evt.preventDefault())
+            evt.preventDefault();
+        else
+            evt.returnValue = false;
+    }
+</script>

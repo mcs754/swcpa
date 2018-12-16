@@ -23,18 +23,19 @@ if ($_POST) {
 $a = new \App\Model\Arquivo();
 isset($_GET) ? $a->setIdArquivoMorto($_GET['id_arquivo_morto']) : $a->setIdArquivoMorto($_POST['id_arquivo_morto']);
 $aDAO = new \App\DAO\ArquivoDAO();
-$arquivos = $aDAO->pesquisarUm($a);
+$arquivo = $aDAO->pesquisarUm($a);
 ?>
 <form action="arquivo-alterar.php" method="post">
     <div class="container">
         <div class="form-group alert alert-secondary" role="alert">
             <strong>Os campos com <span class="text-danger">*</span> não podem estar em branco.</strong>
         </div>
+        <input type="hidden" id="id_arquivo_morto" name="id_arquivo_morto" value="<?php echo $arquivo['id_arquivo_morto']; ?>">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="nome_arquivo_morto"><span class="text-danger">*</span> Nome identificador da pasta</label>
-                    <input type="text" id="nome_arquivo_morto" name="nome_arquivo_morto" class="form-control" value="<?php echo $arquivos['nome_arquivo_morto'];?>" required>
+                    <input type="text" id="nome_arquivo_morto" name="nome_arquivo_morto" class="form-control" value="<?php echo $arquivo['nome_arquivo_morto'];?>" required>
                 </div>
             </div>
         </div>
