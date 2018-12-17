@@ -30,7 +30,7 @@ include 'cabecalho.php';
         <div class="col-sm-4">
             <h5>
             <span class="badge badge-dark text-left" style="border-radius: 2px; padding: 5px;">
-                <i class="fas fa-database"></i> Registrado até o momento:<br>
+                <i title='Registros' class="fas fa-database"></i> Registrado até o momento:<br>
             </span>
             <span class="badge badge-warning text-left" style="border-radius: 2px; padding: 5px;">
                 <?php
@@ -47,7 +47,7 @@ include 'cabecalho.php';
                 $aDAO = new \App\DAO\AlunoDAO();
                 $alunos = $aDAO->pesquisar($a);
                 $result = count($alunos);
-                echo "<i title='Estudante' class='far fa-file-alt'></i> {$result} pastas de estudantes";
+                echo "<i title='Estudante' class='fas fa-file-alt'></i> {$result} pastas de estudantes";
                 ?>
             </span>
             </h5>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * Created by PhpStorm.
  * User: Marcos

@@ -12,11 +12,15 @@ if (isset($_GET['msg']) && $_GET['msg'] == 1)
 if (isset($_GET['msg']) && $_GET['msg'] == 2)
     echo "<div class='form-group alert alert-success'>Estudante alterado com sucesso!</div>";
 $a = new \App\Model\Aluno();
-isset($_GET['nome_aluno']) ? $a->setNomeAluno($_GET['nome_aluno']) : $a->setNomeAluno("");
-$b = $a->getNomeAluno();
-while ($b != ""){ //se a pesquisa não tiver nenhum caractere, o while não permite que se execute a pesquisa no banco*/
+isset($_GET['parametro']) ? $a->setCpfAluno($_GET['parametro']) : $a->setCpfAluno("");
+isset($_GET['parametro']) ? $a->setNomeAluno($_GET['parametro']) : $a->setNomeAluno("");
+isset($_GET['parametro']) ? $a->setNomeMaeAluno($_GET['parametro']) : $a->setNomeMaeAluno("");
+$b = $a->getCpfAluno();
+if ($b != ""){
     $aDAO = new \App\DAO\AlunoDAO();
     $alunos = $aDAO->pesquisar($a);
+    $result = count($alunos);
+    echo "<p style='font-size: 11pt; text-align: right; margin: 1px; margin-top: -22px;'><span title='Registros retornados' class='badge'><i class='fas fa-plus-circle'></i> {$result}</span></p>";
     if (count($alunos) > 0) {
 ?>
     <div class="table-responsive-sm align-items-center">
@@ -52,7 +56,6 @@ while ($b != ""){ //se a pesquisa não tiver nenhum caractere, o while não perm
     } else {
         echo "<div class='container alert alert-danger'>Não existem estudantes com a pesquisa informada!</div>";
     }
-break;
 }
 ?>
 </div>

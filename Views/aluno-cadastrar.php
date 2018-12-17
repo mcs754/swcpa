@@ -5,7 +5,7 @@ include 'cabecalho.php';
 <div class="container cabecalho">
     <h1>Cadastrar nova pasta de estudante</h1>
 </div>
-<form action="aluno-cadastrar.php" method="post" name="formcadastro" onsubmit="return validarCPF()">
+<form action="aluno-cadastrar.php" method="post">
     <div class="container">
         <?php
         if ($_POST) {
@@ -19,7 +19,7 @@ include 'cabecalho.php';
             $a->setObservacaoAluno($_POST['observacao_aluno']);
             $aDAO = new \App\DAO\AlunoDAO();
             if ($aDAO->inserir($a)) {
-                echo "<div class='form-group alert alert-success'>Nova pasta de estudante cadastrada com sucesso!</div>";
+                echo "<div class='form-group alert alert-success'>Nova pasta de estudante cadastrado com sucesso!</div>";
             } else {
                 echo "<div class='form-group alert alert-danger'>Nova pasta de estudante não foi cadastrada!</div>";
             }
@@ -103,42 +103,3 @@ include 'cabecalho.php';
 <?php
 include 'rodape.php';
 ?>
-<script>
-    function validarCPF(cpf) {
-        var formulario = document.forms["formcadastro"]
-        var cpf = formulario.cpf_aluno.value
-        cpf = cpf.replace(/[^\d]+/g, '');
-        if (cpf == '') return true;
-        if (cpf.length != 11 ||
-            cpf == "00000000000" ||
-            cpf == "11111111111" ||
-            cpf == "22222222222" ||
-            cpf == "33333333333" ||
-            cpf == "44444444444" ||
-            cpf == "55555555555" ||
-            cpf == "66666666666" ||
-            cpf == "77777777777" ||
-            cpf == "88888888888" ||
-            cpf == "99999999999")
-            return false;
-        // Valida 1o digito
-        add = 0;
-        for (i = 0; i < 9; i++)
-            add += parseInt(cpf.charAt(i)) * (10 - i);
-        rev = 11 - (add % 11);
-        if (rev == 10 || rev == 11)
-            rev = 0;
-        if (rev != parseInt(cpf.charAt(9)))
-            return false;
-        // Valida 2o digito
-        add = 0;
-        for (i = 0; i < 10; i++)
-            add += parseInt(cpf.charAt(i)) * (11 - i);
-        rev = 11 - (add % 11);
-        if (rev == 10 || rev == 11)
-            rev = 0;
-        if (rev != parseInt(cpf.charAt(10)))
-            return false;
-        return true;
-    }
-</script>

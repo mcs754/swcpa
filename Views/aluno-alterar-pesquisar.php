@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * Created by PhpStorm.
  * User: Marcos
@@ -106,7 +107,7 @@ $alunos = $aDAO->pesquisarUm($a);
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <button type="button" class="btn btn-outline-secondary btn-block" onClick="history.go(-1)">Voltar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-block" onclick="history.go(-1)">Voltar</button>
                 </div>
             </div>
         </div>

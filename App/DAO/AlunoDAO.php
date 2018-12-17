@@ -11,8 +11,7 @@ namespace App\DAO;
 
 class AlunoDAO extends Conexao
 {
-    public function inserir($aluno)
-    {
+    public function inserir($aluno) {
         $sql = "insert into aluno (id_arquivo_morto, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno)values(:id_arquivo_morto, :num_aluno, :cpf_aluno, :data_nascimento_aluno, :nome_aluno, :nome_mae_aluno, :observacao_aluno)";
         try {
             $a = $this->conexao->prepare($sql);
@@ -29,9 +28,8 @@ class AlunoDAO extends Conexao
             $e->getMessage();
         }
     }
-
-    public function pesquisar($aluno)
-    {
+    /*
+    public function pesquisar($aluno) {
         $sql = "select nome_arquivo_morto, id_aluno, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where nome_aluno like :nome_aluno order by nome_arquivo_morto, num_aluno";
         try {
             $a = $this->conexao->prepare($sql);
@@ -42,9 +40,26 @@ class AlunoDAO extends Conexao
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
         }
     }
+    */
+    public function pesquisar($aluno) {
+        $sql = "select nome_arquivo_morto, id_aluno, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno
+        from arquivo_morto inner join aluno
+        on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto
+        where cpf_aluno like :parametro or nome_aluno like :parametro or nome_mae_aluno like :parametro
+        order by nome_arquivo_morto, num_aluno";
+        try {
+            $a = $this->conexao->prepare($sql);
+            $a->bindValue(":parametro", $aluno->getCpfAluno());
+            $a->bindValue(":parametro", "%" . $aluno->getNomeAluno() . "%");
+            $a->bindValue(":parametro", "%" . $aluno->getNomeMaeAluno() . "%");
+            $a->execute();
+            return $a->fetchAll(\PDO::FETCH_CLASS, "\App\Model\Aluno");
+        } catch (\PDOException $e) {
+            echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
+        }
+    }
 
-    public function excluir($aluno)
-    {
+    public function excluir($aluno) {
         $sql = "delete from aluno where id_aluno = :id_aluno";
         try {
             $a = $this->conexao->prepare($sql);
@@ -56,8 +71,7 @@ class AlunoDAO extends Conexao
         }
     }
 
-    public function alterar($aluno)
-    {
+    public function alterar($aluno) {
         $sql = "update aluno set id_arquivo_morto = :id_arquivo_morto, num_aluno = :num_aluno, cpf_aluno = :cpf_aluno, data_nascimento_aluno = :data_nascimento_aluno, nome_aluno = :nome_aluno, nome_mae_aluno = :nome_mae_aluno, observacao_aluno = :observacao_aluno where id_aluno = :id_aluno";
         try {
             $a = $this->conexao->prepare($sql);
@@ -76,8 +90,7 @@ class AlunoDAO extends Conexao
         }
     }
 
-    public function pesquisarUm($aluno)
-    {
+    public function pesquisarUm($aluno) {
         $sql = "select * from aluno inner join arquivo_morto on aluno.id_arquivo_morto = arquivo_morto.id_arquivo_morto where id_aluno = :id_aluno ";
         try {
             $a = $this->conexao->prepare($sql);
@@ -89,8 +102,7 @@ class AlunoDAO extends Conexao
         }
     }
 
-    public function pesquisarImprimir($aluno)
-    {
+    public function pesquisarImprimir($aluno) {
         $sql = "select nome_arquivo_morto, id_aluno, num_aluno, cpf_aluno, data_nascimento_aluno, nome_aluno, nome_mae_aluno, observacao_aluno from arquivo_morto inner join aluno on arquivo_morto.id_arquivo_morto = aluno.id_arquivo_morto where aluno.id_arquivo_morto = :id_arquivo_morto order by num_aluno";
         try {
             $a = $this->conexao->prepare($sql);
